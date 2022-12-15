@@ -13,7 +13,7 @@ namespace AdventureGame
             Console.WriteLine("\t \t \t \t \t \t \t \t Adventure Game? \n ");
             menu();
 
-            public void menu()
+            void menu()
             {
 
                 Console.WriteLine("\t \t \t \t \t \t \t \t 1: \t Play \n \n \t \t \t \t \t \t \t \t 2: \t Options  \n \n \t \t \t \t \t \t \t \t 3: \t Help \n \n \t \t \t \t \t \t \t \t 4: \t Exit to windows");

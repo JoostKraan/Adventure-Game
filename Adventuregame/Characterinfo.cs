@@ -1,5 +1,7 @@
-﻿using System;
+﻿using AdventureGame;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +10,7 @@ namespace Adventuregame
 {
     public class Characterinfo
     {
+        Program program = new Program();
         public void Archer()
         {
             Console.Clear();
@@ -43,6 +46,11 @@ namespace Adventuregame
         public void Warrior()
         {
             Console.WriteLine("WIP");
+        }
+
+        public void backTomenu()
+        {
+            mainprogram
         }
 
 
