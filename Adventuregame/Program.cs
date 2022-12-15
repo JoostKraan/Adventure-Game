@@ -4,7 +4,7 @@ using System.Security.Cryptography;
 
 namespace AdventureGame
 {
-    class Program
+    public class Program
     {
         
 
@@ -13,7 +13,7 @@ namespace AdventureGame
             Console.WriteLine("\t \t \t \t \t \t \t \t Adventure Game? \n ");
             menu();
 
-            void menu()
+            public void menu()
             {
 
                 Console.WriteLine("\t \t \t \t \t \t \t \t 1: \t Play \n \n \t \t \t \t \t \t \t \t 2: \t Options  \n \n \t \t \t \t \t \t \t \t 3: \t Help \n \n \t \t \t \t \t \t \t \t 4: \t Exit to windows");
@@ -57,13 +57,23 @@ namespace AdventureGame
                 Console.SetCursorPosition(65, 11);
                 Console.WriteLine("3: \t Warrior");
                 Console.SetCursorPosition(65, 15);
-                Console.ReadLine();
+                
 
                 int classinput = Int32.Parse(Console.ReadLine());
                 switch (classinput)
                 {
                     case 1:
-                        
+                        character.Archer();
+                        break;
+                    case 2:
+                        character.Sorcerer();
+                        break;
+                    case 3:
+                        character.Warrior();
+                        break;
+                        default :
+                        Console.WriteLine("Invalid Input");
+                        break;
                         
                 }
             }
