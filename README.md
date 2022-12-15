@@ -9,10 +9,10 @@ Feedback is always appreciated
 
 TO DO LIST!!!
                                   
-Add health 
-Add quests
-Make console color match the class you are playing
-save the username of the user
-create npc's that say stuff
-maybe have some ascii art in some way.
-use sounds to make the game more engaging.
+Add health,
+Add quests,
+Make console color match the class you are playing,
+save the username of the user,
+create npc's that say stuff,
+maybe have some ascii art in some way,
+use sounds to make the game more engaging,
