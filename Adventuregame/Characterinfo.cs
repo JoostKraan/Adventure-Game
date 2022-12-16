@@ -10,6 +10,7 @@ namespace Adventuregame
 {
     public class Characterinfo
     {
+        public int characterselect;
         Game game = new Game();
         Program program = new Program();
         public void Archer()
@@ -30,11 +31,15 @@ namespace Adventuregame
             Console.SetCursorPosition(40, 18);
             Console.WriteLine("To select this class press : 1");
             Console.SetCursorPosition(40, 20);
-            
-            int confirmArch = Int32.Parse(Console.ReadLine());;
+
+            int confirmArch = Int32.Parse(Console.ReadLine()); 
             if (confirmArch == 1)
             {
-                game.ArchStart();
+                Console.Clear();
+                Console.WriteLine("Selected Archer");
+                Console.ReadLine();
+                characterselect = 1;
+                game.GameStart();
             }
         }
         public void Sorcerer()
@@ -64,9 +69,11 @@ namespace Adventuregame
             int confirmsorc = Int32.Parse(Console.ReadLine());
             if (confirmsorc == 1)
             {
-               game.SorceStart();
+                Console.Clear();
+                Console.WriteLine("Selected Sorcerer");
+                characterselect = 2;
+                game.GameStart();
             }
-
         }
         public void Warrior()
         {
@@ -92,10 +99,12 @@ namespace Adventuregame
             int confirmwarr = Int32.Parse(Console.ReadLine());
             if (confirmwarr == 1)
             {
-                game.WarrStart();
+                Console.Clear();
+                Console.WriteLine("Selected Archer");
+                Console.ReadLine();
+                characterselect = 3;
+                game.GameStart();
             }
-
         }
     }
-
 }

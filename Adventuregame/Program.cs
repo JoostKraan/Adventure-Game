@@ -6,6 +6,7 @@ namespace AdventureGame
 {
     public class Program
     {
+        public static Characterinfo charInfo = new Characterinfo();
         static void Main(string[] args)
         {
             while (true)

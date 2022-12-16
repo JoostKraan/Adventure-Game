@@ -1,6 +1,8 @@
-﻿using System;
+﻿using AdventureGame;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,29 +10,13 @@ namespace Adventuregame
 {
      class Game
      {
-        public void ArchStart()
+        public void GameStart()
         {
-            Console.Clear();
-            Console.WriteLine("Selected Archer");
+            Console.WriteLine("Test");
+            Console.WriteLine(Program.charInfo.characterselect);
             Console.ReadLine();
-        } 
-        public void SorceStart()
-        {
-            Console.Clear();
-            Console.WriteLine("Selected Sorcerer");
-            Console.ReadLine();
-        }
-        public void WarrStart()
-        {
-            Console.Clear();
-            Console.WriteLine("Selected Warrior");
-            Console.ReadLine();
-        }
-     
-    
-    
-    
-    
-     }
 
+            
+        } 
+     }
 }
