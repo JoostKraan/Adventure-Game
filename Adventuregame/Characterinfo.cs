@@ -10,6 +10,7 @@ namespace Adventuregame
 {
     public class Characterinfo
     {
+        Game game = new Game();
         Program program = new Program();
         public void Archer()
         {
@@ -26,7 +27,15 @@ namespace Adventuregame
             Console.WriteLine("they may struggle against swarms of foes who can quickly close the gap.");
             Console.SetCursorPosition(40, 12);
             Console.WriteLine("As such, they must be careful when facing multiple enemies at once.");
-            Console.ReadLine();
+            Console.SetCursorPosition(40, 18);
+            Console.WriteLine("To select this class press : 1");
+            Console.SetCursorPosition(40, 20);
+            
+            int confirmArch = Int32.Parse(Console.ReadLine());;
+            if (confirmArch == 1)
+            {
+                game.ArchStart();
+            }
         }
         public void Sorcerer()
         {
@@ -49,8 +58,15 @@ namespace Adventuregame
             Console.WriteLine("However, they are not as effective in close-range combat against single targets,");
             Console.SetCursorPosition(40, 18);
             Console.WriteLine("so they must be careful in how they approach each battle.");
-            Console.SetCursorPosition(65, 13);
-            Console.ReadLine();
+            Console.SetCursorPosition(65, 20);
+            Console.WriteLine("Press 1 to Select the Sorcerer");
+
+            int confirmsorc = Int32.Parse(Console.ReadLine());
+            if (confirmsorc == 1)
+            {
+               game.SorceStart();
+            }
+
         }
         public void Warrior()
         {
@@ -72,7 +88,12 @@ namespace Adventuregame
             Console.SetCursorPosition(40, 16);
             Console.WriteLine("they can effectively engage multiple foes at once.");
             Console.SetCursorPosition(65, 18);
-            Console.ReadLine();
+
+            int confirmwarr = Int32.Parse(Console.ReadLine());
+            if (confirmwarr == 1)
+            {
+                game.WarrStart();
+            }
 
         }
     }

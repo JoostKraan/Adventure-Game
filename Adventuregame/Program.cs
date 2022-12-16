@@ -20,7 +20,7 @@ namespace AdventureGame
                 {
                     case 1:
                         Console.Clear();
-                        Game();
+                        GameMenu();
                         break;
                     case 2:
                         Console.Clear();
@@ -34,7 +34,7 @@ namespace AdventureGame
                         break;
                 }
              }
-            static void Game()
+            static void GameMenu()
             {
                 Characterinfo character = new Characterinfo();
                 Console.SetCursorPosition(65, 0);
