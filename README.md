@@ -20,13 +20,13 @@ Add quests.
 
 Make console color match the class you are playing.
 
-save the username of the user.
+Save the username of the user.
 
-create npc's that say stuff.
+Create npc's that say stuff.
 
-maybe have some ascii art in some way.
+Maybe have some ascii art in some way.
 
-use sounds to make the game more engaging.
+Use sounds to make the game more engaging.
 
 
 -
