@@ -12,9 +12,15 @@ namespace AdventureGame
             while (true)
              {
                 Console.Clear();
-                Console.WriteLine("\t \t \t \t \t \t \t \t Adventure Game? \n ");           //not sure how to space text easier than this
-                Console.WriteLine("\t \t \t \t \t \t \t \t 1: \t Play \n \n \t \t \t \t \t \t \t \t 2: \t Help  \n \n \t \t \t \t \t \t \t \t 3: \t Exit to windows \n");
-                Console.SetCursorPosition(65, 10);
+                Console.SetCursorPosition(130, 0);
+                Console.WriteLine("Adventure Game?\n ");
+                Console.SetCursorPosition(130, 4);
+                Console.WriteLine("1 : Play \n");
+                Console.SetCursorPosition(130, 8);
+                Console.WriteLine("2 : Help \n");
+                Console.SetCursorPosition(130, 12);
+                Console.WriteLine("3 : Exit to windows \n");
+                
                 int userinput = Int32.Parse(Console.ReadLine());
 
                 switch (userinput) //menu logic 
@@ -32,21 +38,22 @@ namespace AdventureGame
                         break;
                     default:
                         Console.WriteLine("Invalid option");
+                        Console.ReadLine();
                         break;
                 }
              }
             static void GameMenu()
             {
                 Characterinfo character = new Characterinfo();
-                Console.SetCursorPosition(65, 0);
+                Console.SetCursorPosition(130, 0);
                 Console.WriteLine("Choose your Class . . .");
-                Console.SetCursorPosition(65, 5);
+                Console.SetCursorPosition(130, 5);
                 Console.WriteLine("1:\t Archer");
-                Console.SetCursorPosition(65, 8);
+                Console.SetCursorPosition(130, 8);
                 Console.WriteLine("2: \t Sorcerer");
-                Console.SetCursorPosition(65, 11);
+                Console.SetCursorPosition(130, 11);
                 Console.WriteLine("3: \t Warrior");
-                Console.SetCursorPosition(65, 15);
+                Console.SetCursorPosition(130, 15);
                 int classinput = Int32.Parse(Console.ReadLine());
 
                 switch (classinput)
