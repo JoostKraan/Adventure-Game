@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,6 +16,12 @@ namespace Adventuregame
         Program program = new Program();
         public void Archer()
         {
+            int Health = 5;
+            int Armor = 0;
+            int Mana = 10;
+            int Crowns = 0;
+            int ChoasCrystals = 0;
+
             Console.Clear();
             Console.SetCursorPosition(130, 0);
             Console.WriteLine("Archer");
