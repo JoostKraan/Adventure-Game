@@ -1,9 +1,7 @@
 {
   "profiles": {
     "Adventuregame": {
-      "commandName": "Project",
-      "commandLineArgs": "/fullscreen\r\n",
-      "workingDirectory": "E:\\projects\\Adventure-Game"
+      "commandName": "Project"
     },
     "Profile 1": {
       "commandName": "Project",

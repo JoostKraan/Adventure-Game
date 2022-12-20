@@ -6,16 +6,20 @@ using System.Threading.Tasks;
 
 namespace Adventuregame
 {
-    public class Player_Enemy_Stats
+    public class Player
     {
         public int Health = 5;
         public int Armor = 0;
         public int Mana = 10;
         public int Crowns = 0;
         public int ChoasCrystals = 0;
-        public int Poison = 0;
+        public bool Poisoned = false;
+
+
+
 
     }
-
-
+    
+    
+    
 }
