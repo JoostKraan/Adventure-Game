@@ -10,16 +10,21 @@ namespace Adventuregame
     {
         public int Health = 5;
         public int Armor = 0;
-        public int Mana = 10;
+        public int Mana;
+        public int Stamina;
+        public int Arrows;
         public int Crowns = 0;
         public int ChoasCrystals = 0;
         public bool Poisoned = false;
-
-
-
-
+        public int intelligence;
     }
     
+        
+
+
+
     
-    
+
+
+
 }

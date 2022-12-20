@@ -12,7 +12,7 @@ namespace Adventuregame
 {
     public class Characterinfo
     {
-        Player player = new Player();
+        public static Player player = new Player();
         public int characterselect;
         public void Archer()
         {
@@ -38,7 +38,7 @@ namespace Adventuregame
                 Console.Clear();
                 characterselect = 1;
                 player.Health = 10;
-                player.Mana = 0;
+                player.Arrows = 15;
                 Program.GameConfig(characterselect, player);
             }
         }
@@ -100,10 +100,9 @@ namespace Adventuregame
             if (confirmwarr == 1)
             {
                 Console.Clear();
-                Console.ReadLine();
                 characterselect = 3;
                 player.Health = 15;
-                player.Mana = 0;
+                player.Stamina = 25;
                 Program.GameConfig(characterselect, player);
             }
 

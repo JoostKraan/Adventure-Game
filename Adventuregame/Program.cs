@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 
 namespace AdventureGame
 {
+
     public static class Program
     {
         public static Characterinfo charInfo = new Characterinfo();
@@ -15,10 +16,13 @@ namespace AdventureGame
                 Console.SetCursorPosition(85, 0);
                 Console.WriteLine("Adventure Game?\n ");
                 Console.SetCursorPosition(85, 4);
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("1 : Play \n");
                 Console.SetCursorPosition(85, 8);
+                Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine("2 : Help \n");
                 Console.SetCursorPosition(85, 12);
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("3 : Exit to windows \n");
 
                 int userinput = Int32.Parse(Console.ReadLine());
@@ -47,12 +51,16 @@ namespace AdventureGame
         {
             Characterinfo character = new Characterinfo();
             Console.SetCursorPosition(80, 0);
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("Choose your Class . . .");
             Console.SetCursorPosition(80, 5);
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("1:\t Archer");
             Console.SetCursorPosition(80, 8);
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("2: \t Sorcerer");
             Console.SetCursorPosition(80, 11);
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("3: \t Warrior");
             Console.SetCursorPosition(80, 15);
             int classinput = Int32.Parse(Console.ReadLine());
@@ -96,41 +104,123 @@ namespace AdventureGame
             if (characterselect == 1)
             {
                 Console.SetCursorPosition(85, 4);
-                Console.WriteLine("I am an Archer.");
+                Console.WriteLine("I have chosen to be an Archer.");
                 Console.SetCursorPosition(85, 6);
                 Console.WriteLine("And what am I going to be called?");
                 string playerName = Console.ReadLine();
                 Console.Clear();
                 Console.SetCursorPosition(85, 4);
-                Console.WriteLine($"You are {playerName} the Archer");
+                Console.WriteLine($"You can call me {playerName} the Archer");
+                Console.SetCursorPosition(85, 6);
+                Console.WriteLine("Press Enter to continue . . . ");
                 Console.ReadLine();
-
+                Gamestart(characterselect, playerName);
             }
             else if (characterselect == 2)
             {
                 Console.SetCursorPosition(85, 4);
-                Console.WriteLine("I am a Sorcerer");
+                Console.WriteLine("I have chosen to be a Sorcerer");
                 Console.SetCursorPosition(85, 6);
                 Console.WriteLine("And what am I going to be called?");
                 string playerName = Console.ReadLine();
                 Console.Clear();
                 Console.SetCursorPosition(85, 4);
-                Console.WriteLine($"You are {playerName} the Sorcerer");
+                Console.WriteLine($"You can call me {playerName} the Sorcerer");
+                Console.SetCursorPosition(85, 6);
+                Console.WriteLine("Press Enter to continue . . . ");
                 Console.ReadLine();
+                Gamestart(characterselect, playerName);
             }
             else if (characterselect == 3)
             {
                 Console.SetCursorPosition(85, 4);
-                Console.WriteLine("I am a Warrior");
+                Console.WriteLine("I have chosen to be a Warrior");
                 Console.SetCursorPosition(85, 6);
                 Console.WriteLine("And what am I going to be called?");
                 string playerName = Console.ReadLine();
                 Console.Clear();
                 Console.SetCursorPosition(85, 4);
-                Console.WriteLine($"You are {playerName} the Warrior");
+                Console.WriteLine($"You can call me {playerName} the Warrior");
+                Console.SetCursorPosition(85, 6);
+                Console.WriteLine("Press Enter to continue . . . ");
                 Console.ReadLine();
+                Gamestart(characterselect,playerName);
 
+            }
+            
+        }
+        public static void Gamestart(int characterselect,string playerName)
+        {
+            
+            Console.Clear();
+            Console.SetCursorPosition(70, 2);
+            Console.WriteLine("You start out with these base stats for your character.");
+            Console.SetCursorPosition(70, 4);
+            Console.WriteLine($"Name : {playerName}");
+            Console.SetCursorPosition(70, 6);
+            Console.WriteLine($"Health : {Characterinfo.player.Health}");
+            Console.SetCursorPosition(70, 8);
+            Console.WriteLine($"Stamina : {Characterinfo.player.Stamina}");
+            if (characterselect == 1)
+            {
+                Console.SetCursorPosition(70, 8);
+                Console.WriteLine($"Arrows : {Characterinfo.player.Arrows}");
+                Console.SetCursorPosition(70, 10);
+                Weapons dagger = new Weapons("Dagger", 1, 10);
+                Weapons longbow = new Weapons("Longbow", 2, 15);
+                Weapons crossbow = new Weapons("Crossbow", 5, 10);
+                Console.SetCursorPosition(70, 15);
+                Console.WriteLine($"Weapon 1 : {dagger.name} (Short-ranged Melee weapon)");
+                Console.SetCursorPosition(70, 20);
+                Console.WriteLine($"Weapon 2: {longbow.name}(Long-range Accurate bow)");
+                Console.SetCursorPosition(70, 25);
+                Console.WriteLine($"Weapon 3 : {crossbow.name}(Medium-range Strong Bow)");
+                Console.SetCursorPosition(70, 30);
+                Console.WriteLine("I seem to have 3 weapon choices to help me through my journey. . . ");
+                Console.SetCursorPosition(70, 32);
+                Console.WriteLine("It looks like there is a Dagger, Longbow and a Crossbow laying infront of me.");
+                Console.SetCursorPosition(70, 34);
+                Console.WriteLine("A Dagger is great choice for close-quarter combat");
+                Console.SetCursorPosition(70, 36);
+                Console.WriteLine("But that bow would be amazing to use against enemies from a longer range.");
+                Console.SetCursorPosition(70, 38);
+                Console.WriteLine("Or if I want to sacrifice range an accuracy for strenght then i should go for the Crossbow.");
+                Console.SetCursorPosition(70, 42);
+                Console.WriteLine("Choose an option with 1, 2 and 3 ");
+                Console.SetCursorPosition(70, 44);
+                int weaponSelection = Int32.Parse(Console.ReadLine());
+                switch (weaponSelection)
+                {
+                    case 1:
+                        Console.Clear();
+                        Console.SetCursorPosition(70, 2);
+                        Console.WriteLine("I grabbed the Dagger so i can attack my enemies from a close range");
+                        Console.ReadLine();
+                        break;
+                    case 2:
+                        Console.Clear();
+                        Console.SetCursorPosition(70, 2);
+                        Console.WriteLine("I took the Longbow so i can defeat my enemies from a distance");
+                        Console.ReadLine();
+                        break;
+                    case 3:
+                        Console.Clear();
+                        Console.SetCursorPosition(70, 2);
+                        Console.WriteLine("I decided to take the Crossbow with me since that weapon- ");
+                        Console.SetCursorPosition(70, 4);
+                        Console.WriteLine("does the most amount of damage against my enemies");
+                        break;
+                }
+            }
+            if (characterselect == 2)
+                Console.WriteLine(Characterinfo.player.Mana);
+            if (characterselect == 3)
+                Console.WriteLine(Characterinfo.player.Stamina);
+            Console.ReadLine();
 
+            if (characterselect == 1)
+            {
+                
             }
         }
     }
