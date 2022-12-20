@@ -24,10 +24,8 @@ namespace AdventureGame
                 Console.SetCursorPosition(85, 12);
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("3 : Exit to windows \n");
-
-                int userinput = Int32.Parse(Console.ReadLine());
-
-                switch (userinput) //menu logic 
+                int userInput = Int32.Parse(Console.ReadLine());
+                switch (userInput) //menu logic 
                 {
                     case 1:
                         Console.Clear();
@@ -41,13 +39,13 @@ namespace AdventureGame
                         Environment.Exit(0);
                         break;
                     default:
-                        Console.WriteLine("Invalid option");
+                        Console.WriteLine("Invalid Input");
                         Console.ReadLine();
                         break;
                 }
             }
         }
-        public static void GameMenu()
+        public static void GameMenu() // Class selection case 
         {
             Characterinfo character = new Characterinfo();
             Console.SetCursorPosition(80, 0);
@@ -64,7 +62,6 @@ namespace AdventureGame
             Console.WriteLine("3: \t Warrior");
             Console.SetCursorPosition(80, 15);
             int classinput = Int32.Parse(Console.ReadLine());
-
             switch (classinput)
             {
                 case 1:
@@ -81,7 +78,7 @@ namespace AdventureGame
                     break;
             }
         }
-        public static void Help()
+        public static void Help() // explanation about game (will be changed around) needs explanation about spells and weapons
         {
             Console.SetCursorPosition(85, 0);
             Console.WriteLine("Need help? ");
@@ -96,10 +93,10 @@ namespace AdventureGame
             Console.SetCursorPosition(75, 12);
             Console.WriteLine("The rest of the game is currently under development.");
             Console.SetCursorPosition(75, 18);
-            Console.WriteLine("To go back to the Main menu : Press any key...");
+            Console.WriteLine("To go back to the Main menu : Press any Enter . . . ");
             Console.ReadLine();
         }
-        public static void GameConfig(int characterselect, Player player)
+        public static void GameConfig(int characterselect, Player player) // User enters their player infomation. class and name.
         {
             if (characterselect == 1)
             {
@@ -145,13 +142,10 @@ namespace AdventureGame
                 Console.WriteLine("Press Enter to continue . . . ");
                 Console.ReadLine();
                 Gamestart(characterselect,playerName);
-
             }
-            
         }
-        public static void Gamestart(int characterselect,string playerName)
+        public static void Gamestart(int characterselect,string playerName) // most actions happen here, weapon selection and main adventures (might be getting some changes changed?)
         {
-            
             Console.Clear();
             Console.SetCursorPosition(70, 2);
             Console.WriteLine("You start out with these base stats for your character.");
@@ -163,31 +157,30 @@ namespace AdventureGame
             Console.WriteLine($"Stamina : {Characterinfo.player.Stamina}");
             if (characterselect == 1)
             {
-                Console.SetCursorPosition(70, 8);
-                Console.WriteLine($"Arrows : {Characterinfo.player.Arrows}");
                 Console.SetCursorPosition(70, 10);
+                Console.WriteLine($"Arrows : {Characterinfo.player.Arrows}");
                 Weapons dagger = new Weapons("Dagger", 1, 10);
                 Weapons longbow = new Weapons("Longbow", 2, 15);
                 Weapons crossbow = new Weapons("Crossbow", 5, 10);
-                Console.SetCursorPosition(70, 15);
-                Console.WriteLine($"Weapon 1 : {dagger.name} (Short-ranged Melee weapon)");
                 Console.SetCursorPosition(70, 20);
-                Console.WriteLine($"Weapon 2: {longbow.name}(Long-range Accurate bow)");
+                Console.WriteLine($"Weapon 1 : {dagger.name} (Short-ranged Melee weapon)");
                 Console.SetCursorPosition(70, 25);
-                Console.WriteLine($"Weapon 3 : {crossbow.name}(Medium-range Strong Bow)");
+                Console.WriteLine($"Weapon 2: {longbow.name}(Long-range Accurate bow)");
                 Console.SetCursorPosition(70, 30);
-                Console.WriteLine("I seem to have 3 weapon choices to help me through my journey. . . ");
+                Console.WriteLine($"Weapon 3 : {crossbow.name}(Medium-range Strong Bow)");
                 Console.SetCursorPosition(70, 32);
-                Console.WriteLine("It looks like there is a Dagger, Longbow and a Crossbow laying infront of me.");
+                Console.WriteLine("I seem to have 3 weapon choices to help me through my journey. . . ");
                 Console.SetCursorPosition(70, 34);
-                Console.WriteLine("A Dagger is great choice for close-quarter combat");
+                Console.WriteLine("It looks like there is a Dagger, Longbow and a Crossbow laying infront of me.");
                 Console.SetCursorPosition(70, 36);
-                Console.WriteLine("But that bow would be amazing to use against enemies from a longer range.");
+                Console.WriteLine("A Dagger is great choice for close-quarter combat");
                 Console.SetCursorPosition(70, 38);
+                Console.WriteLine("But that bow would be amazing to use against enemies from a longer range.");
+                Console.SetCursorPosition(70, 40);
                 Console.WriteLine("Or if I want to sacrifice range an accuracy for strenght then i should go for the Crossbow.");
-                Console.SetCursorPosition(70, 42);
-                Console.WriteLine("Choose an option with 1, 2 and 3 ");
                 Console.SetCursorPosition(70, 44);
+                Console.WriteLine("Choose an option with 1, 2 and 3 ");
+                Console.SetCursorPosition(70, 46);
                 int weaponSelection = Int32.Parse(Console.ReadLine());
                 switch (weaponSelection)
                 {
@@ -210,10 +203,35 @@ namespace AdventureGame
                         Console.SetCursorPosition(70, 4);
                         Console.WriteLine("does the most amount of damage against my enemies");
                         break;
-                }
+                }       
             }
-            if (characterselect == 2)
-                Console.WriteLine(Characterinfo.player.Mana);
+            if (characterselect == 2) 
+            {
+                Console.SetCursorPosition(70, 10);
+                Console.WriteLine($"Mana : {Characterinfo.player.Mana}");
+                Spells fireBolt = new Spells("FireBolt", 3, 5, 0);
+                Spells fireBurn = new Spells("FireBurn", 2, 5, 2);
+                Weapons Staff = new Weapons("Staff", 1, 10);
+                Console.SetCursorPosition(50, 20);
+                Console.WriteLine($"Spell 1 : {fireBolt.name} (Direct Attack spell that does a medium amount of damage on impact of an enemy)");//maybe look for more original names for spells
+                Console.SetCursorPosition(50, 25);
+                Console.WriteLine($"Spell 2 : {fireBurn.name} (Spell does a small amount of damage on impact but does more damage overtime)");
+                Console.SetCursorPosition(50, 30);
+                Console.WriteLine($"Weapon 3: {Staff.name} (A melee weapon for close range combat, not very strong. Best to use as secondary weapon)");
+                Console.SetCursorPosition(50, 35);
+                Console.WriteLine("It looks like i have 2 Spell options and one melee weapon that i can use for my adventure.");
+                Console.SetCursorPosition(50, 37);
+                Console.WriteLine("I've got two spellbooks containing a Firebolt Spell and a Firburn Spell and a staff.");
+                Console.SetCursorPosition(50, 39);
+                Console.WriteLine("The Firebolt is always a good option since it's a spell that does a decent amount of damage and almost never fails to cast");
+                Console.SetCursorPosition(50, 41);
+                Console.WriteLine("The Fireburn is also a good option because of it does damage overtime which could help if there is an enemy chasing you!");
+                Console.SetCursorPosition(50, 43);
+                Console.WriteLine("And last there is a staff which can be used for melee attacks and maybe it could enhance my spellcasting skills later on . . .");
+                Console.SetCursorPosition(50, 45);
+                Console.WriteLine("Choose an option with 1, 2 and 3 ");
+                
+            }
             if (characterselect == 3)
                 Console.WriteLine(Characterinfo.player.Stamina);
             Console.ReadLine();
@@ -222,6 +240,7 @@ namespace AdventureGame
             {
                 
             }
+            Console.WriteLine("test outside if");
         }
     }
 }

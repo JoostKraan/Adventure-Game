@@ -72,6 +72,7 @@ namespace Adventuregame
                 characterselect = 2;
                 player.Health = 5;
                 player.Mana = 10;
+                player.Stamina = 15;
                 Program.GameConfig(characterselect, player);
             }
         }
