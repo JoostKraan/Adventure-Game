@@ -26,7 +26,7 @@ Create npc's that say stuff.
 
 Maybe have some ascii art in some way.
 
-Use sounds to make the game more engaging.
+Maybe use beeps for some special actions.
 
 
 -
@@ -37,7 +37,7 @@ Make it so that you can save you progress.
 
 some sort of text animation.
 
-flashing colors for when hp is lost
+color change when hp is lost.
 
 have a big catalog of weapons and spells.
 
