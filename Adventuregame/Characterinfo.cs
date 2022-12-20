@@ -13,11 +13,10 @@ namespace Adventuregame
     public class Characterinfo
     {
         Player player = new Player();
-        Program program = new Program();
         public int characterselect;
         public void Archer()
         {
-           
+
             Console.Clear();
             Console.SetCursorPosition(85, 0);
             Console.WriteLine("Archer");
@@ -33,14 +32,14 @@ namespace Adventuregame
             Console.WriteLine("As such, they must be careful when facing multiple enemies at once.");
             Console.SetCursorPosition(85, 18);
             Console.WriteLine("To select the Archer class press 1 . . . ");
-            int confirmArch = Int32.Parse(Console.ReadLine()); 
+            int confirmArch = Int32.Parse(Console.ReadLine());
             if (confirmArch == 1)
             {
                 Console.Clear();
                 characterselect = 1;
                 player.Health = 10;
                 player.Mana = 0;
-                GameStart(characterselect,player);
+                Program.GameConfig(characterselect, player);
             }
         }
         public void Sorcerer()
@@ -73,7 +72,7 @@ namespace Adventuregame
                 characterselect = 2;
                 player.Health = 5;
                 player.Mana = 10;
-                GameStart(characterselect,player);
+                Program.GameConfig(characterselect, player);
             }
         }
         public void Warrior()
@@ -105,38 +104,11 @@ namespace Adventuregame
                 characterselect = 3;
                 player.Health = 15;
                 player.Mana = 0;
-                GameStart(characterselect,player);
+                Program.GameConfig(characterselect, player);
             }
 
         }
-        public void GameStart(int characterselect,Player player)
-        {
-            if (characterselect == 1)
-            {
-                Console.SetCursorPosition(85, 0);
-                Console.WriteLine("I am an Archer.");
-                Console.WriteLine("And what am I going to be called?");
-                Console.WriteLine(player.Health);
-                string playerName = Console.ReadLine();
-            }
-            else if (characterselect == 2)
-            {
-                Console.SetCursorPosition(85, 0);
-                Console.WriteLine("I am a Sorcerer");
-                Console.WriteLine("And what am I going to be called?");
-                Console.WriteLine(player.Health);
-                string playerName = Console.ReadLine();
-            }
-            else if (characterselect == 3)
-            {
-                Console.SetCursorPosition(85, 0);
-                Console.WriteLine("I am a Warrior");
-                Console.WriteLine("And what am I going to be called?");
-                Console.WriteLine(player.Health);
-                string playerName = Console.ReadLine();
-                
-                
-            }
-        }
+
     }
 }
+
