@@ -30,7 +30,7 @@ namespace Adventuregame
             Console.WriteLine("they may struggle against swarms of foes who can quickly close the gap.");
             Console.SetCursorPosition(65, 12);
             Console.WriteLine("As such, they must be careful when facing multiple enemies at once.");
-            Console.SetCursorPosition(85, 18);
+            Console.SetCursorPosition(65, 18);
             Console.WriteLine("To select the Archer class press 1 . . . ");
             int confirmArch = Int32.Parse(Console.ReadLine());
             if (confirmArch == 1)

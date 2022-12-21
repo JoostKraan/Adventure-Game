@@ -18,13 +18,4 @@ namespace Adventuregame
         public bool Poisoned = false;
         public int intelligence;
     }
-    
-        
-
-
-
-    
-
-
-
 }
