@@ -9,12 +9,11 @@ namespace AdventureGame
 
     public class Program
     {
-        public static Inventory inventory = new Inventory();
-        public List<Weapon> weapons = inventory.GetWeapons();
-        public List<Spell> spells = inventory.GetSpells();
+        Weapon weapon = new Weapon(
         public Characterinfo charInfo = new Characterinfo();
         public static void Main(string[] args)
         {
+            
             while (true)
             {
                 Console.Clear();

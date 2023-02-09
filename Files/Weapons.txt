@@ -1,0 +1,6 @@
+Shortsword,7,15
+Dagger,3,10
+Warhammer,12,8
+Staff,2,10
+Longbow,5,14
+Crossbow,8,15
